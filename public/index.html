@@ -25,6 +25,56 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- Add grapesjs CSS with important flag to ensure styles are applied -->
+    <link rel="stylesheet" href="https://unpkg.com/grapesjs@0.22.12/dist/css/grapes.min.css">
+    <!-- Custom styles to ensure panels are visible -->
+    <style>
+      /* Ensure GrapesJS panels are visible when components are selected */
+      .gjs-pn-views-container {
+        display: block !important;
+        width: 15% !important;
+      }
+      .gjs-pn-views {
+        display: block !important;
+      }
+      .gjs-cv-canvas {
+        width: 70% !important;
+        height: 100% !important;
+      }
+
+      /* Panel visibility and priority styles */
+      .gjs-pn-commands {
+        z-index: 2 !important;
+      }
+      .gjs-pn-options {
+        z-index: 2 !important;
+      }
+      .gjs-pn-devices-c {
+        z-index: 2 !important;
+      }
+
+      /* Make sure panels and their content are visible */
+      .gjs-pn-panel {
+        display: block !important;
+      }
+      .gjs-sm-sector, .gjs-trt-trait, .gjs-clm-tags, .gjs-sm-properties {
+        display: block !important;
+      }
+
+      /* Fix for component toolbar */
+      .gjs-toolbar {
+        z-index: 999 !important;
+      }
+    </style>
+    <!-- Add grapesjs and plugins scripts to make them available globally -->
+    <script src="https://unpkg.com/grapesjs@0.22.12/dist/grapes.min.js"></script>
+    <script src="https://unpkg.com/grapesjs-blocks-basic"></script>
+    <script src="https://unpkg.com/grapesjs-plugin-forms"></script>
+    <script src="https://unpkg.com/grapesjs-component-countdown"></script>
+    <script>
+      // Make sure grapesjs is available globally
+      window.grapesjs = grapesjs;
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

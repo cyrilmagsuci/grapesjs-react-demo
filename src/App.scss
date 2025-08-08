@@ -54,6 +54,48 @@ body {
       flex-direction: column;
     }
   }
+  
+  // Right sidebar styles
+  .gjs-column-r {
+    background-color: white;
+    overflow-y: auto;
+    max-height: calc(100vh - 96px);
+    
+    .custom-style-manager,
+    .custom-selector-manager,
+    .custom-trait-manager,
+    .custom-layer-manager {
+      padding: 15px;
+      
+      h4 {
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+      
+      .property-item {
+        margin-bottom: 10px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 12px;
+      }
+      
+      input, select {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  // Canvas styles
+  .gjs-custom-editor-canvas {
+    min-height: 500px;
+    border: 1px solid var(--border-neutral-subtle);
+  }
 }
 .page {
   &:empty {

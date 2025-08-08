@@ -1,6 +1,99 @@
 /* My Custom Blocks Styles */
 @import "./fonts/beVietnam-pro.css";
+/* GrapesJS Custom Styles */
 
+/* Ensure panels are visible */
+.gjs-pn-views-container {
+  display: block !important;
+  width: 15% !important;
+}
+
+.gjs-pn-views {
+  display: block !important;
+}
+
+/* Box Block Styles */
+.box-block {
+  display: flex;
+  min-height: 50px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px dashed #dee2e6;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.direction-row {
+  flex-direction: row;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+/* Text Block Styles */
+.text-small {
+  font-size: 12px;
+}
+
+.text-medium {
+  font-size: 16px;
+}
+
+.text-large {
+  font-size: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Avatar Block Styles */
+.avatar-block {
+  display: inline-block;
+  margin: 10px;
+  width: auto;
+}
+
+.avatar-block img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+}
+
+/* Improve editor layout */
+.gjs-editor {
+  overflow: hidden;
+}
+
+.gjs-cv-canvas {
+  width: 70% !important;
+  height: 100% !important;
+}
+
+.gjs-pn-panel.gjs-pn-devices-c {
+  height: 35px;
+}
+
+/* Fix toolbar visibility */
+.gjs-toolbar {
+  display: flex !important;
+  z-index: 999 !important;
+}
+
+/* Make sure all panel content is visible */
+.gjs-block-category.gjs-open,
+.gjs-block-category {
+  display: block !important;
+}
+
+/* Ensure trait and style panels show properly */
+.gjs-sm-sector.gjs-sm-open, 
+.gjs-trt-trait {
+  display: block !important;
+}
 * {
     font-family: "BeVietnamPro-Regular";
     font-weight: 400;
