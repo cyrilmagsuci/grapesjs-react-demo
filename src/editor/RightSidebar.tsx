@@ -88,6 +88,16 @@ interface RightSidebarProps {
         {selectedTab === 0 && (
           <>
             <div className="p-2 bg-gray-100 text-xs">Selectors & Styles</div>
+            {/* Built-in GrapesJS Style Manager (visible only when a component is selected) */}
+            {hasSelectedComponent && (
+              <div className="p-2">
+                <div
+                  id="gjs-style-manager"
+                  className="gjs-style-manager-built-in"
+                  style={{ border: '1px solid var(--border-neutral-subtle)', borderRadius: 4, padding: 8, marginBottom: 8 }}
+                />
+              </div>
+            )}
             <SelectorsProvider>{props => <CustomSelectorManager {...props} editor={editor} />}</SelectorsProvider>
             <StylesProvider>{props => <CustomStyleManager {...props} editor={editor} />}</StylesProvider>
           </>

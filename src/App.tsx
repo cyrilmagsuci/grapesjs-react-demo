@@ -18,7 +18,7 @@
  */
 
 import React, { useState, useCallback, useEffect } from "react";
-import GrapesJsEditor, {
+import GjsEditor, {
   Canvas,
   AssetsProvider,
   ModalProvider,
@@ -59,7 +59,10 @@ const defaultEditorOptions = {
   canvas: {
     styles: ['/grapes.css']
   },
+  // Mount built-in Style Manager into our sidebar container when available
   styleManager: {
+    ...({} as any),
+    appendTo: '#gjs-style-manager',
     sectors: [
       {
         name: 'Dimension',
@@ -147,6 +150,21 @@ function App() {
     if (editor) {
       console.log('Editor initialized');
       
+      // Ensure the built-in Style Manager is rendered into our custom container
+      setTimeout(() => {
+        try {
+          const styleManagerContainer = document.querySelector('#gjs-style-manager');
+          if (styleManagerContainer) {
+            editor.StyleManager.render();
+            console.log('Built-in Style Manager rendered');
+          } else {
+            console.log('Style Manager container not yet available');
+          }
+        } catch (error) {
+          console.error('Error rendering Style Manager:', error);
+        }
+      }, 0);
+
       // Force a refresh of the editor to ensure all panels are properly rendered
       setTimeout(() => {
         try {
@@ -651,7 +669,7 @@ function App() {
         <Button onClick={handleSave}>Save</Button>
       </Toolbar>
 
-      <GrapesJsEditor
+      <GjsEditor
         className="gjs-custom-editor"
         {...defaultEditorProps}
         grapesjs={window.grapesjs} // Explicitly set grapesjs to ensure it's available
@@ -697,7 +715,7 @@ function App() {
             </Container>
           )}
         </AssetsProvider>
-      </GrapesJsEditor>
+      </GjsEditor>
     </div>
   );
 }
